@@ -1,0 +1,551 @@
+$small: 450px;
+$medium: 900px;
+
+.navbar {
+  background-color: rgb(59, 137, 255);
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 50px;
+  color: white;
+  max-width: 1200px;
+  margin: auto;
+  border-radius: 0px 0px 10px 10px;
+  position: relative;
+
+
+  span {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  svg{
+    height: 40px;
+    width: 40px;
+  }
+
+  .profile{
+    display: flex;
+    position: absolute;
+   top: 70px;
+   left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-end;
+
+    
+
+    button{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: red;
+      border: none;
+      background-color: transparent;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .profileContainer{
+      background-color: white;
+      width: fit-content;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px;
+      border-radius: 20px;
+      gap: 10px;
+      box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.25);
+    }
+
+    img{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    span{
+      font-weight: lighter;
+      font-size: 0.9rem;
+      color: black;
+    }
+    svg{
+      height: 50px;
+      color: rgb(60, 60, 60);
+      width: 50px;
+    }
+    .logout{
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      justify-content: flex-start;
+      border: 1px solid lightgray;
+      padding: 5px;
+      border-radius: 5px;
+      transition: all 0.3s linear;
+      cursor: pointer;
+
+      &:hover{
+        background-color: lightgray;
+      }
+
+    i {
+      padding: 5px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: fit-content;
+      background-color: black;
+      color: white;
+
+      
+      &:hover {
+        background-color: rgb(50, 50, 50);
+        color: white;
+      }
+      svg{
+        width: 20px;
+        height: 20px;
+        color: white;
+      }
+    }}
+  }
+
+}
+
+.button{
+  margin-top: 50px;
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+
+    button{
+      margin: auto;
+      width: fit-content;
+      border: none;
+      background-color: rgb(59, 137, 255);
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+    }
+    span{
+      text-align: center;
+    }
+}
+
+.addnote {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 44;
+  overflow: hidden;
+
+  .modalBody {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    width: fit-content;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    min-width: 350px;
+    border-radius: 30px;
+    height: fit-content;
+
+    @media  (max-width: $small) {
+     
+     padding: 20px;
+     width: 100%;
+     box-sizing: border-box;
+    }
+
+    
+    .colorsInput{
+      display: flex;
+      gap: 5px;
+      margin-bottom: 10px;
+      .default{
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        background-color: whitesmoke;
+
+        &.select{
+          outline: 5px solid skyblue;
+        }
+      }
+      .red{
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        background-color: red;
+
+        &.select{
+          outline: 5px solid skyblue;
+        }
+      }
+      .blue{
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        background-color: blue;
+
+        &.select{
+          outline: 5px solid skyblue;
+        }
+      }
+      .green{
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        background-color: green;
+
+        &.select{
+          outline: 5px solid skyblue;
+        }
+      }
+      .orange{
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        background-color: orange;
+
+        &.select{
+          outline: 5px solid skyblue;
+        }
+      }
+      .purple{
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        background-color: purple;
+
+        &.select{
+          outline: 5px solid skyblue;
+        }
+      }
+
+    }
+    label{
+      padding: 5px 10px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: lightgray;
+      svg{
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    input {
+      border: none;
+      outline: none;
+      padding: 5px 10px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      background-color: transparent;
+      border-bottom: 1px solid lightgray;
+
+      &::placeholder{
+        color: lightgray;
+      }
+    }
+    textarea {
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      padding: 5px 10px;
+      resize: none;
+      overflow: hidden;
+      background-color: transparent;
+      border-bottom: 1px solid lightgray;
+
+      &::placeholder{
+        color: lightgray;
+      }
+    }
+    .close{
+      display: flex;
+      justify-content: space-between;
+      padding: 0px 5px;
+      
+
+      span{
+        color: rgb(100, 100, 100);
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 10px 5px;
+      }
+
+      button{
+        border: none;
+        font-weight: bold;
+        font-size: 1rem;
+        background-color: transparent;
+        color: red;
+        padding: 0px;
+        
+      }
+    }
+
+    button {
+      width: fit-content;
+      padding: 5px 10px;
+      border: none;
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+    }
+  }
+}
+
+.notes {
+  display: flex;
+  justify-content: center;
+  
+margin-top: 50px;
+  .notesContainer {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .noteItem {
+      padding: 20px;
+      min-width: 200px;
+      max-width: 300px;
+      box-sizing: border-box;
+      background-color: antiquewhite;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+      height: max-content;
+      overflow: auto;
+     
+
+      h3{
+        margin-bottom: 20px;
+      }
+      p{
+        color: inherit;
+        opacity: 0.9;
+        padding: 0px 15px 0px 0px;
+      }
+      img{
+        width: 100px;
+      }
+
+      .options{
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        color: inherit;
+        opacity: 0.5;
+
+        svg{
+          opacity: 0.8;
+          &:hover{
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+.editNote{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  .editNoteContainer{
+    background-color: white;
+    min-width: 350px;
+    max-width: fit-content;
+    padding: 30px;
+    border-radius: 20px;
+    gap: 10px;
+  display: flex;
+  flex-direction: column;
+
+  @media  (max-width: $small) {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+   }
+
+  input {
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: transparent;
+    border-bottom: 1px solid lightgray;
+
+    &::placeholder{
+      color: lightgray;
+    }
+  }
+  textarea {
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 5px 10px;
+    resize: none;
+ 
+    overflow: hidden;
+    background-color: transparent;
+    border-bottom: 1px solid lightgray;
+
+    &::placeholder{
+      color: lightgray;
+    }
+  }
+
+  .imageDisplay{
+
+    img{
+      width: 100px;
+    }
+    label{
+      padding: 5px 10px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: lightgray;
+      svg{
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+  
+  .colorsInput{
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+    .default{
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
+      background-color: whitesmoke;
+
+      &.select{
+        outline: 5px solid skyblue;
+      }
+    }
+    .red{
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
+      background-color: red;
+
+      &.select{
+        outline: 5px solid skyblue;
+      }
+    }
+    .blue{
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
+      background-color: blue;
+
+      &.select{
+        outline: 5px solid skyblue;
+      }
+    }
+    .green{
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
+      background-color: green;
+
+      &.select{
+        outline: 5px solid skyblue;
+      }
+    }
+    .orange{
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
+      background-color: orange;
+
+      &.select{
+        outline: 5px solid skyblue;
+      }
+    }
+    .purple{
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
+      background-color: purple;
+
+      &.select{
+        outline: 5px solid skyblue;
+      }
+    }
+    
+  }
+
+
+  .close{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 5px;
+    align-items: center;
+    
+
+    span{
+      color: rgb(100, 100, 100);
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding: 10px 5px;
+    }
+
+    svg{
+      border: none;
+      font-weight: bold;
+      font-size: 2rem;
+      background-color: transparent;
+      color: red;
+      padding: 0px;
+      
+    }
+  }
+  button {
+    width: fit-content;
+    padding: 5px 10px;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  }
+}
